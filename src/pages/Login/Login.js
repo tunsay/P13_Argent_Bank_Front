@@ -41,7 +41,6 @@ export function Login() {
               lastName: userProfile.lastName,
             })
           )
-          console.log('TEST')
         }
         // if the API success navigate to the account page
         navigate('/account')

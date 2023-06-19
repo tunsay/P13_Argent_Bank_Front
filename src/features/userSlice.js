@@ -16,7 +16,6 @@ export const userSlice = createSlice({
     },
     // logout function is used to update the user object in the redux store when the user logs out //
     logout: (state) => {
-      // remove the user object and token from local storage
       // set the user object in the redux store to null
       state.user = null
     },
@@ -27,15 +26,14 @@ export const userSlice = createSlice({
       // update the user object with the new first name and last name
       user.firstName = action.payload.firstName
       user.lastName = action.payload.lastName
-      // if the user is logged in, set the user object in local storage to the updated user object
       // set the user object in the redux store to the updated user object
       state.user = user
     },
   },
 })
-
-export const { login, logout, updateUser } = userSlice.actions // export the login, logout, and updateUser functions
-
-export const selectUser = (state) => state.user.user // export the user object from the redux store
-
-export default userSlice.reducer // export the userSlice reducer to be used in the redux store
+// export the login, logout, and updateUser functions
+export const { login, logout, updateUser } = userSlice.actions
+// export the user object from the redux store
+export const selectUser = (state) => state.user.user
+// export the userSlice reducer to be used in the redux store
+export default userSlice.reducer

@@ -12,12 +12,9 @@ import { logout, selectUser } from '../../features/userSlice'
 export function Header() {
   const user = useSelector(selectUser)
   // useSelector() is used to access the user object from the redux store
-  // JSON.parse() is used to convert the stringified user object back to an object so that we can access the user's first name
-  const dispatch = useDispatch() // useDispatch() is used to dispatch an action to the redux store
+  const dispatch = useDispatch()
 
-  /**
-   * userLogout() is a function that dispatches the logout action to the redux store when the user clicks the Sign Out link
-   */
+  // userLogout() is a function that dispatches the logout action to the redux store when the user clicks the Sign Out link
   const userLogout = () => {
     dispatch(logout())
   }
